@@ -164,7 +164,7 @@ class PositionControl(BaseEnv):
                 self.loss_weights.pointmass.vel * vel_loss
                 + self.loss_weights.pointmass.jerk * jerk_loss
                 + self.loss_weights.pointmass.pos * pos_loss
-                + 0.5 * self.loss_weights.pointmass.pos * heading_loss
+                + self.loss_weights.pointmass.head * heading_loss
             )
 
             total_reward = (
@@ -172,7 +172,7 @@ class PositionControl(BaseEnv):
                 - self.reward_weights.pointmass.vel * vel_loss
                 - self.reward_weights.pointmass.jerk * jerk_loss
                 - self.reward_weights.pointmass.pos * pos_loss
-                - 0.5 * self.reward_weights.pointmass.pos * heading_loss
+                - self.reward_weights.pointmass.head * heading_loss
             ).detach()
 
             loss_components = {

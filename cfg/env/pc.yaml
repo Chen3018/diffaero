@@ -22,6 +22,7 @@ loss_weights:
     vel: 1.
     jerk: 0.01
     pos: 0.1
+    head: 0.05
   quadrotor:
     vel: 1.
     jerk: 0.001
@@ -34,6 +35,7 @@ reward_weights:
     vel: 0.5
     jerk: 0.01
     pos: 0.1
+    head: 0.05
   quadrotor:
     vel: 1.
     jerk: 0.001
