@@ -222,8 +222,8 @@ class ObstacleAvoidance(BaseEnv):
                 "total_reward": total_reward.mean().item()
             }
         else:
-            pos_loss = -(-(self._p-self.target_pos).norm(dim=-1)).exp()
-            
+            dist = (self._p - self.target_pos).norm(dim=-1) #normalizes the distance tensor
+            pos_loss = 1-torch.exp(-.5*dist) # have to use torch.where because dist is a tensor
             vel_diff = (self._v - self.target_vel).norm(dim=-1)
             vel_loss = F.smooth_l1_loss(vel_diff, torch.zeros_like(vel_diff), reduction="none")
             
