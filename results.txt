@@ -133,3 +133,15 @@ obstacle avoidance (positon loss change):
         l_episode: 1.9
         success_rate: 0.00
         survival_rate: 0.21
+
+obstacle avoidance (positon loss change 2):
+    training:
+        loss: 6.869
+        l_episode: 12.0
+        success_rate: 0.44
+        survival_rate: 0.55
+
+    python script/test.py checkpoint=/home/chenjia/diffaero/outputs/train/2025-12-02/14-39-09/checkpoints use_training_cfg=True
+        l_episode: 11.0
+        success_rate: 0.43
+        survival_rate: 0.54
