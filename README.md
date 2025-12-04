@@ -1,3 +1,11 @@
+For 16362, we trained and tested using BPTT, specifically deterministic policy.
+How to train for each of the tasks we did
+```bash
+python script/train.py env=pc algo=apg
+python script/train.py env=oa algo=apg
+python script/train.py env=racing algo=apg
+```
+
 # DiffAero: A GPU-Accelerated Differentiable Simulation Framework for Efficient Quadrotor Policy Learning
 
 This repository contains the code of the paper: [DiffAero: A GPU-Accelerated Differentiable Simulation Framework for Efficient Quadrotor Policy Learning](https://arxiv.org/abs/2509.10247)
